@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="container min-h-screen w-full bg-pink-200 flex flex-col items-center justify-center">
+       <div class="subcontainer flex flex-col items-center  bg-gray-200 shadow-md shadow-[#333]  h-[60vh] w-[400px] py-6 px-4 rounded-lg">
+         <input class="display h-[200px] w-full bg-white text-black rounded-full focus:outline-none       <!-- Removes default browser outline -->
+        focus:border-blue-500    <!-- Changes border color on focus -->
+        focus:ring-2             <!-- Adds a 2px wide ring -->
+        focus:ring-blue-200      <!-- Sets the ring color to light blue -->
+        outline-none
+        transition-colors text-right shadow-lg shadow-[#333] px-4 py-2 mb-4" placeholder="0" >
+            
+
+        <div class="btns grid grid-cols-4 grid-rows-5 gap-2 items-center justify-center w-full">
+            <div class="numbers rounded-full shadow-lg text-xl p-2 text-center">9</div>
+            <div class="numbers rounded-full shadow-lg text-xl p-2 text-center">8</div>
+            <div class="numbers rounded-full shadow-lg text-xl p-2 text-center">7</div>
+            <div class="operator rounded-full shadow-lg text-xl p-2 text-center">+</div>
+            <div class="numbers rounded-full shadow-lg text-xl p-2 text-center">6</div>
+            <div class="numbers rounded-full shadow-lg text-xl p-2 text-center">5</div>
+            <div class="numbers rounded-full shadow-lg text-xl p-2 text-center">4</div>
+            <div class="operato rounded-full shadow-lg text-xl p-2 text-center">-</div>
+            <div class="numbers rounded-full shadow-lg text-xl p-2 text-center">3</div>
+            <div class="numbers rounded-full shadow-lg text-xl p-2 text-center">2</div>
+            <div class="numbers rounded-full shadow-lg text-xl p-2 text-center">1</div>
+            <div class="operator rounded-full shadow-lg text-xl p-2 text-center">*</div>
+            <div class="numbers rounded-full shadow-lg text-xl p-2 text-center">0</div>
+            <div class="operator rounded-full shadow-lg text-xl p-2 text-center">.</div>
+             <div class="opeartor rounded-full shadow-lg text-xl p-2 text-center">/</div>
+            <div id="delete" class="rounded-full shadow-lg text-xl p-2 text-center">DEL</div>
+            <div id="clear" class=" rounded-full shadow-lg text-xl p-2  text-center">AC</div>
+            <div class="percentage rounded-full shadow-lg text-xl p-2 text-center">%</div>
+            <div class="operator col-span-2 col-start-4 row-start-4 rounded-full shadow-lg text-xl p-2 bg-pink-300 text-center">=</div>
+
+        </div>
+       </div>
+    </div>
+</body>
+</html>
