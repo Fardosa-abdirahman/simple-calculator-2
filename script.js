@@ -1,0 +1,5 @@
+const display = document.querySelectorAll(".display")
+const numbers = document.querySelectorAll(".numbers")
+const operators = document.querySelectorAll(".operators")
+const clearbtn = document.querySelectorAll("#clear")
+const deletebtn = document.querySelectorAll("#delete")

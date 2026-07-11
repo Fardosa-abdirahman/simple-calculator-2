@@ -1,0 +1,65 @@
+const display = document.querySelector(".display");
+const numbers = document.querySelectorAll(".numbers");
+const operators = document.querySelectorAll(".operator");
+const clearBtn = document.getElementById("clear");
+const deleteBtn = document.getElementById("delete");
+const percentBtn = document.querySelector(".percentage");
+
+let currentInput = "";
+
+// Update display
+function updateDisplay() {
+  display.value = currentInput || "0";
+}
+
+// Numbers
+numbers.forEach(num => {
+  num.addEventListener("click", () => {
+    currentInput += num.textContent;
+    updateDisplay();
+  });
+});
+
+// Operators + - * / . =
+operators.forEach(op => {
+  op.addEventListener("click", () => {
+    const value = op.textContent;
+
+    if (value === "=") {
+      try {
+        currentInput = eval(currentInput).toString();
+      } catch {
+        currentInput = "Error";
+      }
+    } else {
+      currentInput += value;
+    }
+
+    updateDisplay();
+  });
+});
+
+// Clear
+clearBtn.addEventListener("click", () => {
+  currentInput = "";
+  updateDisplay();
+});
+
+// Delete
+deleteBtn.addEventListener("click", () => {
+  currentInput = currentInput.slice(0, -1);
+  updateDisplay();
+});
+
+// Percentage
+percentBtn.addEventListener("click", () => {
+  try {
+    currentInput = (eval(currentInput) / 100).toString();
+  } catch {
+    currentInput = "Error";
+  }
+  updateDisplay();
+});
+
+// Initialize
+updateDisplay();
