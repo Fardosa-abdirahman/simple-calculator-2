@@ -21,9 +21,19 @@ function updateDisplay() {
 }
 
 console.log(updateDisplay());
-function updateNumbers() {
-   
-}
+
+numbers.forEach(btn => {
+   btn.addEventListener("click", () => {
+      currentInput += btn.textContent;
+      display.value = currentInput;
+   })
+})
+operators.forEach(btn => {
+   btn.addEventListener("click", () => {
+      currentInput += btn.textContent;
+      display.value = currentInput;
+   })
+})
 
 // display intialization
 
