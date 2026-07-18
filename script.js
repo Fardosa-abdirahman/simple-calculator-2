@@ -32,11 +32,28 @@ numbers.forEach(btn => {
 })
 operators.forEach(btn => {
    btn.addEventListener("click", () => {
-      // if(btn.textContent === "=") return;
       currentInput += btn.textContent;
       display.value = currentInput;
    });
 });
 
-// display intialization
+equalbtn.forEach(btn => {
+   btn.addEventListener("click", () => {
+      currentInput = eval(currentInput);
+      display.value = currentInput;
+   });
+});
+clearbtn.forEach(btn => {
+   btn.addEventListener("click", () => {
+      currentInput = "";
+      display.value = currentInput;
+   })
+})
 
+deletebtn.forEach(btn => {
+   btn.addEventListener("click", () => {
+      currentInput = currentInput.slice(0, -1);
+      display.value = currentInput;
+   })
+})
+// display intialization
