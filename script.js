@@ -3,9 +3,9 @@ console.log("page uploading ...")
 const display = document.querySelector(".display")
 const numbers = document.querySelectorAll(".numbers")
 const operators = document.querySelectorAll(".operator")
-const clearbtn = document.querySelectorAll("#clear")
-const deletebtn = document.querySelectorAll("#delete")
-const equalbtn = document.querySelectorAll("#equal")
+const clearbtn = document.querySelector("#clear")
+const deletebtn = document.querySelector("#delete")
+const equalbtn = document.querySelector("#equal")
 
 // console.log(display, "display clicked")
 // console.log(numbers, "num clicked")
@@ -30,6 +30,8 @@ numbers.forEach(btn => {
       display.value = currentInput;
    })
 })
+
+// worked
 operators.forEach(btn => {
    btn.addEventListener("click", () => {
       currentInput += btn.textContent;
@@ -37,23 +39,31 @@ operators.forEach(btn => {
    });
 });
 
-equalbtn.forEach(btn => {
-   btn.addEventListener("click", () => {
+function saVeResult(name, value) { 
+   safedResult = { name, value };
+   localStorage.setItem("result", JSON.stringify(safedResult));
+   
+}
+
+// worked
+equalbtn.addEventListener("click", () => {
       currentInput = eval(currentInput);
-      display.value = currentInput;
-   });
-});
-clearbtn.forEach(btn => {
-   btn.addEventListener("click", () => {
+   display.value = currentInput;
+ 
+   saVeResult("result", currentInput);
+}
+);
+
+   // worked
+clearbtn.addEventListener("click", () => {
       currentInput = "";
       display.value = currentInput;
    })
-})
 
-deletebtn.forEach(btn => {
-   btn.addEventListener("click", () => {
+// worked
+deletebtn.addEventListener("click", () => {
       currentInput = currentInput.slice(0, -1);
       display.value = currentInput;
    })
-})
+
 // display intialization
